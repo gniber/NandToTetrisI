@@ -13,24 +13,5 @@ CHIP Inc16 {
     OUT out[16];
 
     PARTS:
-    	Not(in = in[0], out = notB);
-    	And(a = in[0], b = notB, out = zero);
-    	Or(a = in[0], b = notB, out = one);
-	HalfAdder(a = in[0], b = one, carry = tmp0, sum = out[0]);
-	FullAdder(a = in[1], b = zero, c = tmp0, carry = tmp1, sum = out[1]);
-	FullAdder(a = in[2], b = zero, c = tmp1, carry = tmp2, sum = out[2]);
-	FullAdder(a = in[3], b = zero, c = tmp2, carry = tmp3, sum = out[3]);
-	FullAdder(a = in[4], b = zero, c = tmp3, carry = tmp4, sum = out[4]);
-	FullAdder(a = in[5], b = zero, c = tmp4, carry = tmp5, sum = out[5]);
-	FullAdder(a = in[6], b = zero, c = tmp5, carry = tmp6, sum = out[6]);
-	FullAdder(a = in[7], b = zero, c = tmp6, carry = tmp7, sum = out[7]);
-	FullAdder(a = in[8], b = zero, c = tmp7, carry = tmp8, sum = out[8]);
-	FullAdder(a = in[9], b = zero, c = tmp8, carry = tmp9, sum = out[9]);
-	FullAdder(a = in[10], b = zero, c = tmp9, carry = tmp10, sum = out[10]);
-	FullAdder(a = in[11], b = zero, c = tmp10, carry = tmp11, sum = out[11]);
-	FullAdder(a = in[12], b = zero, c = tmp11, carry = tmp12, sum = out[12]);
-	FullAdder(a = in[13], b = zero, c = tmp12, carry = tmp13, sum = out[13]);
-	FullAdder(a = in[14], b = zero, c = tmp13, carry = tmp14, sum = out[14]);
-	FullAdder(a = in[15], b = zero, c = tmp14, carry = tmp15, sum = out[15]);
-
+    	Add16(a = in, b[0] = true, b[1..15] = false, out = out);
 }
