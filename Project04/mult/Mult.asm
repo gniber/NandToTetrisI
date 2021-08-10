@@ -7,7 +7,7 @@
 // (R0, R1, R2 refer to RAM[0], RAM[1], and RAM[2], respectively.)
 
 // R*V = R*'s value
-// To multiplies R0V and R1V 
+// To multiply R0V and R1V 
 // A : we are going to add R0V to R2V (assigned to 0
 // in the begining ) R1V times.
 // B : And each time decrease R1V by one
